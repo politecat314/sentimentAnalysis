@@ -1,6 +1,6 @@
 
 
-# Open the file in read mode
+# Open the file in read mode(txt file should be in the same location as the project file)
 text = open("sample.txt", "r")
 
 # Create an empty dictionary
