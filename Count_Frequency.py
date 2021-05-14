@@ -30,3 +30,19 @@ Word_frequency = dict(zip(words,d))
 
 print(Word_frequency)
 
+rem = ''
+re = open("remove.txt",encoding='utf-8')
+for line in re:
+    line = line.strip()
+    rem = rem+line+","
+
+remo = rem.split(',')
+
+for r in remo:
+    if r in Word_frequency:
+        del Word_frequency[r]
+    else:
+        continue
+
+
+print(Word_frequency)
