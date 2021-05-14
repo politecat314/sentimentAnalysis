@@ -28,21 +28,27 @@ d = [words.count(w) for w in words]
 # converts into dic with key as name of the word and values as frequency
 Word_frequency = dict(zip(words,d))
 
+#every word from the dictionary including the stop words
 print(Word_frequency)
+
 
 rem = ''
 re = open("remove.txt",encoding='utf-8')
 for line in re:
+    #removes the spaces
     line = line.strip()
+    #adding every line to a variable
     rem = rem+line+","
 
+#splitting the lines into words
 remo = rem.split(',')
 
+#this loop removes the stop words from the dictionary
 for r in remo:
     if r in Word_frequency:
         del Word_frequency[r]
     else:
         continue
 
-
+#prints the dictionary without the stop words
 print(Word_frequency)
