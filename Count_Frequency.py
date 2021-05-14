@@ -1,7 +1,8 @@
 
 
+
 # Open the file in read mode(txt file should be in the same location as the project file)
-text = open("sample.txt", "r")
+text = open("sample.txt", encoding='utf-8')
 
 # Create an empty dictionary
 d = []
@@ -21,6 +22,7 @@ for line in text:
 
 # split the line into words
 words = word.split()
+
 #counts the words
 d = [words.count(w) for w in words]
 # converts into dic with key as name of the word and values as frequency
