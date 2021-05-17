@@ -1,24 +1,22 @@
 
-
-
-# Open the file in read mode(txt file should be in the same location as the project file)
-text = open("sample.txt", encoding='utf-8')
-
 # Create an empty dictionary
 d = []
 word = ''
 words = ''
-# Loop through each line of the file
-for line in text:
-    # Remove the leading spaces and newline character
-    line = line.strip()
 
-    # Convert the characters in line to
-    # lowercase to avoid case mismatch
-    line = line.lower()
+# Open the file in read mode(txt file should be in the same location as the project file)
+with open("sample.txt", encoding='utf-8')as text:
+    # Loop through each line of the file
+    for line in text:
+        # Remove the leading spaces and newline character
+        line = line.strip()
 
-    # adding all the lines into one string
-    word += line+" "
+        # Convert the characters in line to
+        # lowercase to avoid case mismatch
+        line = line.lower()
+
+        # adding all the lines into one string
+        word += line + " "
 
 # split the line into words
 words = word.split()
@@ -31,17 +29,16 @@ Word_frequency = dict(zip(words,d))
 #every word from the dictionary including the stop words
 print(Word_frequency)
 
-
 rem = ''
-re = open("remove.txt",encoding='utf-8')
-for line in re:
-    #removes the spaces
-    line = line.strip()
-    #adding every line to a variable
-    rem = rem+line+","
+with  open("remove.txt",encoding='utf-8') as re:
+    for line in re:
+        # removes the spaces
+        line = line.strip()
+        # adding every line to a variable
+        rem = rem + line + ","
 
-#splitting the lines into words
-remo = rem.split(',')
+    # splitting the lines into words
+    remo = rem.split(',')
 
 #this loop removes the stop words from the dictionary
 for r in remo:
