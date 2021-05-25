@@ -15,28 +15,28 @@ def badCharHeuristic(string, size):
     # retun initialized list
     return badChar
 
-def clear(s,txt,sp):
-    if s == 0 and txt[s+len(sp)]==" ":
+def clear(s,txt,pat):
+    if s == 0 and txt[s+len(pat)]==" ":
         return True
-    elif s>0 and s+len(sp)==len(txt) and  (txt[s-1] == " " or txt[s-1]=="."):
+    elif s>0 and s+len(pat)==len(txt) and  (txt[s-1] == " " or txt[s-1]=="."):
         return True
-    elif s>0 and (txt[s+len(sp)]=="," or txt[s+len(sp)]== '"' or txt[s+len(sp)]==":" or txt[s+len(sp)]==" " or txt[s+len(sp)]==".") and (txt[s-1] == '"' or txt[s-1] == "," or txt[s-1] == " " or txt[s-1]=="."):
+    elif s>0 and (txt[s+len(pat)]=="," or txt[s+len(pat)]== '"' or txt[s+len(pat)]==":" or txt[s+len(pat)]==" " or txt[s+len(pat)]==".") and (txt[s-1] == '"' or txt[s-1] == "," or txt[s-1] == " " or txt[s-1]=="."):
         return True
     else:
         return False
 
-def search(txt, sp):
+def search(txt, pat):
     '''
     A pattern searching function that uses Bad Character
     Heuristic of Boyer Moore Algorithm
     '''
-    m = len(sp)
+    m = len(pat)
     n = len(txt)
     count = 0
     # create the bad character list by calling
     # the preprocessing function badCharHeuristic()
     # for given pattern
-    badChar = badCharHeuristic(sp, m)
+    badChar = badCharHeuristic(pat, m)
 
     # s is shift of the pattern with respect to text
     s = 0
@@ -46,12 +46,12 @@ def search(txt, sp):
         # Keep reducing index j of pattern while
         # characters of pattern and text are matching
         # at this shift s
-        while j >= 0 and sp[j] == txt[s + j]:
+        while j >= 0 and pat[j] == txt[s + j]:
             j -= 1
 
         # If the pattern is present at current shift,
         # then index j will become -1 after the above loop
-        if j < 0 and clear(s,txt,sp)==True:
+        if j < 0 and clear(s,txt,pat)==True:
             count = count+1
 
 
