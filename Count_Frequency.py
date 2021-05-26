@@ -166,16 +166,14 @@ def main():
     for i in dummy_WF:
         NE_sum = NE_sum + dummy_WF[i]
 
-    if(Psum > Nsum and Psum > NE_sum):
+    if(Psum > Nsum):
         print("Positive Sentiment")
-    elif(Nsum > Psum and Nsum > NE_sum):
+    elif(Nsum > Psum):
         print("Negative Sentiment")
-    elif(NE_sum > Nsum and NE_sum > Psum):
+    else:
         print("Neutral Sentiment")
 
 
 
 if __name__ == '__main__':
     main()
-
-
