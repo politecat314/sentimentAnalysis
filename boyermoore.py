@@ -47,15 +47,15 @@ def search(txt, pat):
         # If the pattern is present at current shift,
         # then index j will become -1 after the above loop
         if j<0:
-            
-            # check if independent word or substring
-            if (s+len(pat) == len(txt)):
-                # print("inside if", s+len(pat))
-                positions.append(s)
-            elif (txt[s+len(pat)] == " "):
-                # print("inside elif", txt[s+len(pat)])
-                positions.append(s)
-            # print("Pattern occur at shift = {}".format(s))
+            if (s==0 or txt[s-1]==" "):
+                # check if independent word or substring
+                if (s+len(pat) == len(txt)):
+                    # print("inside if", s+len(pat))
+                    positions.append(s)
+                elif (txt[s+len(pat)] == " "):
+                    # print("inside elif", txt[s+len(pat)])
+                    positions.append(s)
+                # print("Pattern occur at shift = {}".format(s))
             
             '''   
                 Shift the pattern so that the next character in text
