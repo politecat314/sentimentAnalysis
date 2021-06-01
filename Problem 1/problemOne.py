@@ -4,7 +4,7 @@ import json
 import polyline
 
 def get_key():
-    filename = 'key.txt'
+    filename = './Problem 1/key.txt'
     file = open(filename, 'r')
     return file.read().strip()
 

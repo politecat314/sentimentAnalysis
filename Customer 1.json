@@ -1,0 +1,27 @@
+{
+    "name":"Customer 1",
+    "origin":"3.3615395462207878,101.56318183511695",
+    "destination":"3.1000170516638885,101.53071480907951",
+    "courierRanking":[
+        {
+            "name":"DHL",
+            "total_distance":53944
+        },
+        {
+            "name":"GDEX",
+            "total_distance":61078
+        },
+        {
+            "name":"Pos Laju",
+            "total_distance":63230
+        },
+        {
+            "name":"City-link Express",
+            "total_distance":99022
+        },
+        {
+            "name":"J&T",
+            "total_distance":124951
+        }
+    ]
+}

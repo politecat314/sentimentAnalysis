@@ -1,0 +1,85 @@
+<html>
+<head>
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<title>Google Maps - gmplot</title>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=visualization&key=AIzaSyBHcBJ8Fs8iSbLaUhDqXEBad7tsHe2LRHE"></script>
+<script type="text/javascript">
+    function initialize() {
+        var map = new google.maps.Map(document.getElementById("map_canvas"), {
+            zoom: 11,
+            center: new google.maps.LatLng(3.129411, 101.594443)
+        });
+
+        var marker_icon_00FF7F = {
+            url: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAiCAYAAACwaJKDAAAABmJLR0QA/wD/AP+gvaeTAAACuklEQVRIia3VS2hcVRzH8c9MTKjVMMVu2hSSoFALFasubMASNxFBihsXFR/BNxSVKoVCcSO6ELvRFqGhC5FYAhULplKwNfQRFGpaqjHWamhKhiF9+KhkJhgzTXJc3Bk6SeaVZH6bc885/9/3cu75//83prw2YgvWIY5ZjOE7XKjgXaAODCBoTgRb1wfP3R+NzYmAkNvvKGaOFZl/IGaXbffF7HqEB9YsjPrxGnu+59AvQbAHu3MvWgCN4SONDTv0PMXW9ZXP8/Uwzx4mk92Lt/PguoKQHVbc9q7jz9Nxd2Ug3Lua9lZ6htpMz/6DHwqhTej1YUe9bRurA+bVnOCOBo6NtOMzZOK5re1aEiu9uXlxwLzeeJjWVSuxnShN4Emdm6iPlzaWU32czk0RJwetwwaPti4NmFd7C2xAXRz1aNCcWB408jeYc94QSoVXpwJ/HFlkJceXB438WWTz9XzR6dHlQSP/Rczmj39E9yDZmaUBb87SPRhx3Eqp/VLpCR+fWRp07xlS6Qns51ZFTSCjP/mE9hZaV1UP7E/yYi8zYSdOFEJhwEy4y+FfN3vsHpoaKwPPX+Xxg/x7cx/eyy8Xa30HNTU+49xrrL2zNPDvSR7sIpX+Ak8raH3z6zLgFVcyQ17qLQgrotePkkoP42XzIosV+yQ6fXNpWs9QcWDfZQ5dgFdF9zFHpTrIT+iyu4+peWkW8M4J+BL9xczl2tL7UulJnw/OXT01ysBYUHAxi4H+gW6fDMxd7TpHlDolvk15KBwweJ2fr0ez8SmO/A6fljNVgp7HsK9+i2bHLvHf9KRcOS4VCkd9ezl6Oj4CJxW58cVCTzo7FjWb00noq8JTUWsQnHohiAloqwUU/vRWW8A0bq8V9KyH1gaMVBNc7T/5LyM3IFlL6A3jU5CpJTSX/a7UEno1N45WE/w/S5fY5UesSI4AAAAASUVORK5CYII=",
+            labelOrigin: new google.maps.Point(10, 11)
+        };
+
+        new google.maps.Marker({
+            position: new google.maps.LatLng(3.031992, 101.373441),
+            title: "City-link Express",
+            label: "C",
+            icon: marker_icon_00FF7F,
+            map: map
+        });
+
+        var marker_icon_FF8C00 = {
+            url: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAiCAYAAACwaJKDAAAABmJLR0QA/wD/AP+gvaeTAAACwElEQVRIia3VW2hcVRTG8d/MOFEr1jQgaAqxVNRSH6xWsGCNCBFBi68VKwFvSFBpRSgUX0QfxD6oFaFFQSRqIEVFK15ai6lREdOYXlKtiSRYh0S81E5NaNJxku3DOUMn6SQzmcz3ss/ee33/wzp77XUS5tf1WI/lSGIaI/gGP5bxnqcW9CA01QsbVgsPrI3GpnoBId5vKWVOlJi/kEjYuvEGia13sKaRxKyoQyNs76LziBCC7dgWv+g8aAIvX3qhzR2b2LC6fDof/8Smdxk7aweeKoBTRTGbL7rAs/seo+Wa8kC47nKar6ajz7r8tFP4vhjaiI9evEd645rKgAU11XNJHXsHNOMtjCXjvbarllny5PqFAQt64lZWNFiCNqIygXtbbyadmts4n9IpWtdGnAI0hVW3r6wOWFBz5F+FVBJp1DUtWxw09tchXUhfCHOFV6ZifxI55E6cWhw09ueQK9zn418NLw4a+49jupD+nvZeclPVAf+bor034nCupHZmssZf6a4OuuNrMlnj2Mm5GzWOse5hdzevZEVD5cDuYR7sZGra0/iyGAo9U0HD+/1uufNaGi8rD+wb4a43OJPzKp4rrJdqfe80LnV/7xauXDo38OQZbnyJTNZu3Keo9SVnxQY8Mvqv/od2z1+7j39AJmsQDxcDS0FhAq2f/yzfcag0cP8vdB4Gj4rOY4ZKQeEwdm37lLP5WakEnvkMvIeS9TIXFJ7PZE28/cPMxQND9PwmKDqYhUD/RPtr385c3PUdotLprwYKrx8Z5ejv0eT0JHuiH/Ob85nKQfsw+OGxaLJ3gMm8CfF1rBYKn3wxGD3sGwBdSpz4QqFdBzNRs4k70f4KPGV1BcKBNiGRELCuFlD4a8ttAvK4uFbQgzctFzBUSXAl3xT+HjoJTtQS+s/pSTBWS+gf8ThaS2h8p/xaSfD/nV3boPXJvp8AAAAASUVORK5CYII=",
+            labelOrigin: new google.maps.Point(10, 11)
+        };
+
+        new google.maps.Marker({
+            position: new google.maps.LatLng(3.112924, 101.639827),
+            title: "Pos Laju",
+            label: "P",
+            icon: marker_icon_FF8C00,
+            map: map
+        });
+
+        var marker_icon_1E90FF = {
+            url: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAiCAYAAACwaJKDAAAABmJLR0QA/wD/AP+gvaeTAAADCklEQVRIia2VW0gUYRTHf7M3rxm7QZSGBUYJvmQk9VAGUQQhvhYVC90epKJCEKSXqIfIHroQJD1EWBiFQVlBF1GzKHJFMwtLWrpsKV3W1vY2O+7s14Mz7KqrO67+Xz7mfOf/mzmc830jMb1KgPVAAWACYsAP4AXwPoV3kjYDnYCw2AtFVkmFyFmzW2SVVAiLvVAAQtvfnMwsJXk+jSTVZJdul/I21WArWAXS+DTlew//WusI9dwSCFEH1GovmgSVgHOmjHlHFjgbySqpSFlO+P19vA27iEX8F4BjOtickHNEsmaeWFj1hMwVSauaJOvClWQsLyfU3biOWPQv8DoRmg/cs1eesWaXbjcE1GWxF2Ky5SB/eFwOXAP8Jm2vyuJYmp274fCMgLpyNxzC4liWDVTB2JgAVOaUOZHM1rSgktlKTpkToFKHmoHijKKNaQF1ZRSVAxQDZhNgBWwWe+GsoJrfBlhN8bCYIt2o4n4ToABKdPjrrJCaXwEU/Tz3y5+ezQqq+fuBmF5+c9DVgFCVtIBCHSXoagBohvhIXVZ9noC//XxaUP+zC6g+TwC4DPETFQD8EXfHtsyiciyOZYaBEXcHwzf3QEytBloToQCdCNUR7r2zNrN4C+b5+SmByvduftdvRSihi8BJPZ7s6rthnp+/c1F1F+a8xVMCY0EvQ2dLUX2e28AOEmbKNCFXAPvVkcE+7829IKae3eGmg6g+zwCwjwlDPhEKEAaccv+jaLC7MSlQHmgh1HML4ABj/RinZFCAN0C9734tIhqZUIvA9+A4QBPQkcw8FRTglOrzhINd18d/5ad2lG+dgoTGzAT6C2gIPL80Lhh4WQ9jo9OXDhTgivKjl9HBtwDE5BHC75oBrk5nSgXtBgZCfXcBkPsfI0blMNpxTBcK8FD++HQM+vEJQBtJOj5TaJvyzYVQFf0makllMAJ1iWgE5fMrol43wCsDHkP6PW/jUQFEgay5grpsS1YLwG0k2Uj5AH+if9wAhv45RqHDMXkEwD+X0J/aOjiX0CFt/WIk+T+qxhtde398rAAAAABJRU5ErkJggg==",
+            labelOrigin: new google.maps.Point(10, 11)
+        };
+
+        new google.maps.Marker({
+            position: new google.maps.LatLng(3.265155, 101.680248),
+            title: "GDEX",
+            label: "G",
+            icon: marker_icon_1E90FF,
+            map: map
+        });
+
+        var marker_icon_A52A2A = {
+            url: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAiCAYAAACwaJKDAAAABmJLR0QA/wD/AP+gvaeTAAAC8klEQVRIia2UT0gUURzHPzPr6Lb+2W11kUqwS6CUBy8loZ2kIsLOXbpkB08FQuAtKii6BF0MDxXdki5JgUYlpJjZP1NDMYpdoZU2Xdnd2Z1tZ3deh53BbV3dcfV7ecy83/cz7/fe943E1joMtAMHABkwgF/AOPCtiHeDOoEpQNQqimitrhbtbrdora4WtYoiAGHOdxYySwWeb0lwta2mRjpbV0ej07mhyJ9M8nxlhcloVAi4A/SZHwLAkQe865Tl3isNDdI5nw9PWdkGIICnrIyjNTUcdDqlL6ranhbCA4wUgl5WJOlaX2MjR6qqttwbS/sqKmh2uZiIRNoMWAPe50L3A8/O19crbW63LaClWkWhQpaZicdPAI+AmGzO9dQpiuuU17stoKWTXi8+RXEBPZCNCUBXh8eDQyq0g8XlkCQ6PB6ALgvqAJqaXa6SgJaasv4mwCEDClBeqyg7gpr+ckCx2l8PWYnK9ctACkit6PqOoKY/BaSs+zy/EI/vCGr65wHDan9oLBIhLUrbhIwQjEUiAEOwHqn+VV1Xh8PhkqDD4TCruq4C/bB+o1QgtpBInGmqrMS3jSQsJBIMBIMY0Au8yYUCTBngnYpGj7VUVrLXBtifTHI7EOCvEPeA69Z7R17dSFqIQ9Oq2nLc7cYpy2wmNZPhZiBANJMZBLpz5/JdAuheS6dnB4LBLbP7cHmZVV1fBC6SF/NCS9GAC19VNT2RPdENmovHmYxGAS6RPY//tFl/08D9J6EQel7MBDAYCgE8Bd4WMm++aXBjVde18bzVzsfj/NA0Qc7BbAcaAh6/zMvu67U1yEZnthQowMBSMslSMglAwjD4FIsBPNjKVAz6GVj8mAUxo6roQmiY17FUKMCLOfNnM6uqAKMUOPHtQkd/ahppIZhPJABeFTPYgX7QheC7phFKpQDe2fDY0p/TXq8A0sCeYsV2VgrgX8i2HiB743YFumK2HrBTbBcaThgGQGw3ob/NMbib0GVz9Nsp/gflgB6Q8KkZ6wAAAABJRU5ErkJggg==",
+            labelOrigin: new google.maps.Point(10, 11)
+        };
+
+        new google.maps.Marker({
+            position: new google.maps.LatLng(2.944121, 101.790152),
+            title: "J&T",
+            label: "J",
+            icon: marker_icon_A52A2A,
+            map: map
+        });
+
+        var marker_icon_FFD700 = {
+            url: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAiCAYAAACwaJKDAAAABmJLR0QA/wD/AP+gvaeTAAACg0lEQVRIia3VX2iVZRwH8M975tnUuS5lf/DkRRejqGSkBNXqYhc5Su9SSgZ1JxQZddVtN9rVJGhBIHKoi5BkGV2YZjVmgauBQo4CIRmZkkixUduZnl8X7/vmhvP0es6+8PCcw/P+Pi/vc97fcxKN8xCeRB9KqOM3TOKn/6m9I0M4h6j0iOeeEft2pXOlRyCy9aEiWIKDSaK+d1hMHxf1iyJmVo7p42LvsEgSdRzM6u4KjnZ1is/H7oRWGyfeF12dAqPL4eV3eH19h9HTR3hioPg+nZ1m6BUWFh3AYWjL1nrx2aG3lPfsLA5CpYfODZycNIijmCtla/vv77XxtX33BuZ59SW29tmI/aSvCewa2U15XXNoeR0ju1MnR9vQ//SO5sA8g9tBP9pKKKO90tMamtW3o5w/vojW0OX1JdRQu3ylNTSrr6GW9/PMt1OtoVn9DOr545+ojlNbag5cukl1PHW4/UqNzV41P1ptDj1cZfaqeYxxu6PmMTcxZXjwMbb2FQcnfuDlt7l1y5s4s+pNuzrF1LFiB8qPn4r7NglZz98tCT7u3SyuTDQGr38vtnQLfKLB0ZdnAy48+9TqZ2k+9uwU+Bmbim7VNix99O7q4Kkj/53+g0XBPO9t6RYL51eC9YtixyMCx+4VhM34+8N3VqJnjgppwzzcDAofPNq/En0h3cvTzYIwgDg/noJ/nhPrOwRebFRUarSIafwy/lX65eQkC4v+kbVjsyh8ceq79MOXZ8HX0g5sKc93tIvFC+KBisAbrYLQjfimKpJE4PG1QOGPAyMCN6UdtyaZGnhQ4FKRi4v8UHD90iy4vJbojb/mwNxaoteyudDfY1H092z+tcjF/wLbs1rwiBZENgAAAABJRU5ErkJggg==",
+            labelOrigin: new google.maps.Point(10, 11)
+        };
+
+        new google.maps.Marker({
+            position: new google.maps.LatLng(3.212723, 101.574673),
+            title: "DHL",
+            label: "D",
+            icon: marker_icon_FFD700,
+            map: map
+        });
+
+    }
+</script>
+</head>
+<body style="margin:0px; padding:0px;" onload="initialize()">
+    <div id="map_canvas" style="width: 100%; height: 100%;" />
+</body>
+</html>
