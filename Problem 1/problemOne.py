@@ -242,7 +242,7 @@ def plot_polyline(customer):
         enc_polyline = get_direction(apikey, customer['origin'], customer['destination'], courier['coordinate'])
         lat, long = zip(*polyline.decode(enc_polyline))
         mapPlotter.plot(lat, long, color= courier['color'], edge_width =7)
-    mapPlotter.draw(customer['name']+':before.html')
+    mapPlotter.draw(customer['name']+' before.html')
 
 
 for customer in customers:
@@ -263,7 +263,7 @@ def plot_shortest_polyline(customer, courier):
     lat, long = zip(*polyline.decode(enc_polyline))
     mapPlotter.plot(lat, long, color= courier['color'], edge_width =7)
 
-    mapPlotter.draw(customer['name']+':after.html')
+    mapPlotter.draw(customer['name']+' after.html')
 
 def get_courier(name):
     for courier in couriers:
